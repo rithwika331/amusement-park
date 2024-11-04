@@ -138,7 +138,7 @@
 <body>
     <header>
         <div class="logo-container">
-            <img src="amusement-park/images/logo.png" alt="Accessible Amusement Park Logo" class="logo">
+            <img src="images/logo.png" alt="Accessible Amusement Park Logo" class="logo">
             <h1>Welcome to the Accessible Amusement Park</h1>
         </div>
         <nav>
