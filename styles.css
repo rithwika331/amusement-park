@@ -1,0 +1,577 @@
+/* General Styling */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+
+}
+
+
+/* Header */
+header {
+    background-color: #2194f3;
+    padding: 1px 0;
+    color: white;
+    text-align: center;
+    color: white;
+    text-align: center;
+    position: fixed; /* Fixes the header at the top */
+    top: 0; /* Positions it at the top of the page */
+    width: 100%; /* Ensures the header spans the full width */
+    z-index: 1000; /* Ensures it stays above other content */
+
+}
+#welcome {
+    margin: 20px; /* Adds space around the section so it doesn't touch the edges */
+    max-width: 900px;
+    padding: 200px;
+     align-items: center;
+}
+
+header h1 {
+    font-size: 1.8rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+nav {
+    padding-bottom: 10px;
+
+    
+}
+nav ul li {
+    margin: 0 10px;
+    margin-left: 20px; 
+}
+
+nav ul li a {
+    text-decoration: none; /* Remove default underline */
+    padding: 15px 20px; /* Adjust padding */
+    position: relative; /* Required for the underline effect */
+    color: #90EE90; /* Text color */
+}
+
+nav ul li a:hover::after,  /* Hover state */
+nav ul li a:focus::after,  /* Focus state */
+nav ul li a:active::after { /* Active state */
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px; /* Position the line below the text */
+    height: 2px; /* Thickness of the underline */
+    background-color: #000; /* Color of the underline */
+    transition: width 0.3s ease-in-out; /* Smooth transition for the line */
+    width: 100%; /* Full-width underline */
+}
+
+nav ul li a:hover, 
+nav ul li a:focus, 
+nav ul li a:active {
+    outline: none; /* Remove outline when clicked or focused */
+    background-color: transparent; /* Remove background on focus or click */
+    box-shadow: none; /* Remove shadow or borders when active */
+}
+
+
+/* Main Content */
+main {
+    padding: 20px;
+    text-align: center;
+}
+/* Increase font size and align navigation to the right */
+nav ul {
+    display: flex;
+    justify-content: flex-end; /* Align navigation items to the right */
+    list-style-type: none;
+}
+nav ul li:first-child {
+    margin-left: 50px; /* Adjust this value to push it a bit to the right */
+    margin-right: auto; /* Ensures other items don't affect the first item */
+    font-size: 1.5em; /* Increase the font size */
+    padding: 10px 20px; /* Increase padding for the first item */
+}
+
+
+
+section {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 18px;
+    margin-top: 300px
+
+}
+
+/* Forms */
+form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 80%;
+    padding: 15px;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #007bff; /* Blue for register */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px; /* Space between Register and Login */
+}
+
+/*hover effect missing on the button */
+button:hover {
+    background-color: #004999;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+
+}
+
+/* Text container */
+/*.text-container {
+    max-width: 50%;
+    padding: 20px;
+}
+/* Logo container */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+
+/* Logo container */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Text container */
+.text-container {
+    max-width: 50%;
+    padding: 20px;
+}
+/* Logo styling */
+/* Define the keyframes for the animation */
+@keyframes slide {
+    0% {
+        transform: translateX(100%); /* Start from the right outside of the viewport */
+    }
+    100% {
+        transform: translateX(-100%); /* End at the left outside of the viewport */
+    }
+}
+
+/* Style for the logo container */
+.logo-container {
+    position: relative; /* Ensure the logo container's position is relative */
+    overflow: hidden;  /* Hide overflow content */
+    display: flex;     /* Align items horizontally */
+    align-items: center; /* Center items vertically */
+}
+
+/* Style for the logo */
+.logo {
+    width: 100px; /* Adjust size as needed */
+    height: 75px;
+    border-radius: 50%; /* Oval shape */
+    object-fit: cover; /* Ensure the logo maintains its aspect ratio */
+    margin-right: 20px; /* Space between logo and text */
+}
+
+/* Style for the welcome text */
+.welcome-text {
+    display: inline-block; /* Ensure the text stays on the same line */
+    white-space: nowrap; /* Prevent wrapping */
+    animation: slide 15s linear infinite; /* Adjust duration as needed */
+}
+
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    text-align: center;
+
+}
+
+.login-link {
+    margin-left: 10px;
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.login-link:hover {
+    background-color: #0056b3;
+}
+
+/* Styling the form buttons */
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+
+/* Styling the login link as a button */
+.login-button {
+    padding: 10px 20px;
+    background-color: #28a745; /* Green for login */
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 16px;
+    display: inline-block;
+    text-align: center;
+}
+
+.login-button:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+/* Media Queries for Mobile Devices */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    button {
+        padding: 10px;
+    }
+}
+/* Styling for the #welcome section */
+#welcome {
+    padding: 40px;
+    background-color: #f0f8ff; /* Light, soft background for better contrast */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Form container styling */
+form {
+    background-color: #E1E5F6; /* Light background for contrast */
+ 
+     padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 500px;
+    margin: auto;
+    font-family: 'Arial', sans-serif;
+    margin-top: 100px; /* Adjust this value as needed */
+}
+
+/* Labels for the form */
+form label {
+    font-size: 1.5em; /* Increase font size for readability */
+    color: #333;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Input fields styling */
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2em; /* Larger input text size */
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #fff; /* Clear background for better readability */
+}
+
+form input:focus {
+    border-color: #3498db; /* Blue border when focused */
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5); /* Highlighted shadow */
+}
+
+/* Submit and Login buttons */
+form button[type="submit"],
+form a.login-button {
+    font-size: 1.5em; /* Larger button text for readability */
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #3498db; /* Blue for the login button */
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 20px; /* Add space between Register and Login buttons */
+}
+
+form button[type="submit"] {
+    font-size: 1.5em;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #2ecc71; /* Green for the register button */
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+/* Accessibility enhancements */
+form input:focus,
+form button:focus,
+form a:focus {
+    outline: 3px solid #2980b9; /* Visible focus for accessibility */
+}
+
+
+/* Flexbox to split the layout */
+        .flex-container {
+            display: flex;
+        }
+        /* Style for the dashboard section (left side) */
+        .dashboard {
+            width: 30%;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-right: 2px solid #ccc;
+        }
+        /* Style for the content area (right side) */
+        .content-area {
+            width: 70%;
+            padding: 20px;
+        }
+        /* Button styling */
+        .dashboard-options button {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .dashboard-options button:hover {
+            background-color: #0056b3;
+        }
+        /* Hide the content initially */
+        .hidden {
+            display: none;
+        }
+h1, h2 {
+            margin: 0;
+        }
+        main {
+            padding: 20px;
+        }
+        .ride-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .ride-info {
+            padding: 20px;
+            flex: 1;
+        }
+        .ride-info h2 {
+            margin-top: 0;
+            color: #4CAF50;
+        }
+        .ride-info p {
+            margin: 10px 0;
+            font-size: 16px;
+            color: #2E7D32;
+        }
+        .more-info-btn {
+            background-color: #FF9800;
+            color: white;
+            text-decoration: none; /* Remove underline */
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            display: inline-block; /* Make anchor behave like a button */
+        }
+        .more-info-btn:hover {
+            background-color: #FB8C00;
+        }
+        /* Grid layout for rides */
+        .rides-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        /* Responsive design for smaller screens */
+        @media (max-width: 768px) {
+            .rides-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+.ride-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.content {
+    padding: 20px;
+    margin: auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin-top: 250px;
+    margin-bottom: 50px; /* Add margin at the bottom to create space above the footer */
+}
+
+
+/*water ride*/
+
+.ride-image {
+    width: 30%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.ride-image:hover {
+    transform: scale(1.05);
+}
+
+/* Additional styling for responsiveness */
+@media screen and (max-width: 768px) {
+    .image-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ride-image {
+        width: 90%;
+        margin-bottom: 15px;
+    }
+}
+
+main{
+
+    margin-top: 15px;
+}
+
+/* Footer */
+footer {
+    background-color:#E1E5F6;
+    color: #333333;;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
